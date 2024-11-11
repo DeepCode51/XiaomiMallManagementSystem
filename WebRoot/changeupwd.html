@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        #t{
+            width: 150px;
+        }
+        a{
+            text-decoration:none;
+            color: #FF6700;
+        }
+        
+    </style>
+</head>
+<body>
+    <table class="table table-hover">
+        <tr>
+            <td id="t">账号：</td>
+            <td><input type="text" id="uid"></td>
+        </tr>
+        <tr>
+            <td>原密码</td>
+            <td><input type="password" id="upass"></td>
+        </tr>
+        <tr>
+            <td>新密码：</td>
+            <td><input type="password" id="npass"></td>
+        </tr>
+        <tr>
+            <td>确认密码：</td>
+            <td><input type="password" id="npass2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="button"  onclick="chengeupwd()" value="提交修改"></td>
+        </tr>
+       
+    </table>
+</body>
+<script>
+    function chengeupwd(){
+       var uid=$("#uid").val();
+       var upass=$("#upass").val();
+       var npass=$("#npass").val();
+       var npass2=$("#npass2").val();
+       console.log( uid)
+       console.log( upass)
+       console.log( npass)
+       if(npass==npass2){
+       var xhr=new XMLHttpRequest();
+       xhr.onreadystatechange=function(){
+               if(xhr.readyState==4&xhr.status==200){
+                   var result=xhr.responseText;
+                   if(result==1){
+              alert("修改成功");
+              window.parent.location.reload();
+              }else if(result==-1){
+               alert("原密码错误，请重试");
+             }else if(result==0){
+               alert("未知错误，修改失败");
+             }
+               }
+           }
+           xhr.open("get","changeupwd?uid="+uid+"&upass="+upass+"&npass="+npass,true);
+           xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+           xhr.send();
+        }else{
+            alert("两次密码不一致"); 
+        }
+      }
+   </script>
+</html>

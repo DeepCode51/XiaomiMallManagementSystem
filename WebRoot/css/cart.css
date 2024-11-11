@@ -1,0 +1,129 @@
+@charset "utf-8";
+body{
+	font-family: "微软雅黑";
+	font-size:14px;
+	color:#666666;
+}
+body, ul, li{
+	padding: 0px;
+	margin: 0px;
+}
+#wrap ul, li{
+	list-style-type:none;
+}
+
+#wrap ul li{
+	float:left;
+	width:200px;
+	text-align:center;
+}
+#wrap ul#title{
+	width: 1200px;
+    margin: 20px auto 0px;
+    background-color: #F3F3F3;
+    border: 1px solid #CCCCCC;
+    line-height: 45px;
+    height: 45px;
+}
+#wrap ul.prods{
+    margin: 10px auto 0;
+    width: 1200px;
+    height: 100px;
+    line-height: 100px;
+	background-color: #FEF4E8;
+    border-top: 1px solid #ABAAA8;
+}
+#wrap ul li:first-child{
+	text-align: left;
+	width:120px;
+	padding-left: 30px;
+}
+#wrap ul li:last-child{
+	width:120px;
+	padding-right: 30px;
+}
+#wrap ul li.li_prod{
+	width:300px;
+}
+#wrap ul.prods li.li_prod{
+	text-align: left;
+}
+
+#wrap ul li img.prodimg{
+	vertical-align: middle;
+}
+#wrap ul li span.prodname{
+	vertical-align: middle;
+	margin-left: 20px;
+}
+#wrap ul li a{
+	text-decoration: none;
+}
+a.delNum, a.addNum{
+	border: 1px solid #CCCCCC;
+    padding: 5px 10px;
+    color:#000;
+   	vertical-align: middle;
+}
+a.delNum{  padding: 5px 12px; }
+input.buyNumInp{
+	vertical-align: middle;
+	border: 1px solid #CCCCCC;
+	padding: 2px 8px;
+	width: 40px;
+	height: 25px;
+	text-align: center;
+	font-size:16px;
+}
+/*总计*/
+#total{
+	width:1200px;
+	margin: 10px auto;
+}
+#total #total_1{
+	float:left;
+	width:1075px;
+	height:45px;
+	line-height:45px;
+	border: 1px solid #CCC;
+}
+#total #total_1 *{
+	vertical-align: middle;
+}
+#total #total_1 input[name='allC']{
+	margin-left:30px;
+}
+#total #total_1 #del_a{
+	margin-left: 15px;
+	text-decoration: none;
+}
+#total #total_1 #div_sum{
+	width:250px;
+	text-align: center;
+	float: right;	
+}
+#total #total_1 #span_1{
+}
+#total #total_1 #span_1+span{
+	font-size: 25px;
+	color:#FF0000;
+}
+#total #total_1 #span_2{
+	font-size: 25px;
+	color:#FF0000;
+}
+#total #total_2 a{
+	float:right;
+	width:123px;
+	height:47px;
+	line-height:47px;
+	text-align: center;
+	text-decoration:none;
+	background-color: #D9141E;
+	color: #FFF;
+	font-weight:bold;
+	font-size:24px;
+}
+#total #total_2 a:hover{
+	background-color: #DD4343;
+}
